@@ -29,6 +29,7 @@ for d in pie_data:
 fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
 fig.show()
 
+# TODO: customize!
 
 
 
@@ -39,7 +40,6 @@ fig.show()
 
 
 
-exit()
 
 #
 # CHART 2 (LINE)
@@ -96,3 +96,18 @@ bar_data = [
 print("----------------")
 print("GENERATING BAR CHART...")
 print(bar_data) # TODO: create a horizontal bar chart based on the bar_data
+
+#x = ['giraffes', 'orangutans', 'monkeys']
+#y = [20, 14, 23]
+
+x = []
+y = []
+
+for d in bar_data:
+    x.append(d["genre"])
+    y.append(d["viewers"])
+
+fig = go.Figure([go.Bar(x=x, y=y)])
+fig.show()
+
+# TODO: maybe horizontal bar, with bars in order of their values (desc, with biggest bar first / top)
