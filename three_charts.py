@@ -6,22 +6,40 @@ import plotly.graph_objects as go
 # CHART 1 (PIE)
 #
 
-#pie_data = [
-#    {"company": "Company X", "market_share": 0.55},
-#    {"company": "Company Y", "market_share": 0.30},
-#    {"company": "Company Z", "market_share": 0.15}
-#]
-#
-#print("----------------")
-#print("GENERATING PIE CHART...")
-#print(pie_data) # TODO: create a pie chart based on the pie_data
+pie_data = [
+    {"company": "Company X", "market_share": 0.55},
+    {"company": "Company Y", "market_share": 0.30},
+    {"company": "Company Z", "market_share": 0.15}
+]
+
+print("----------------")
+print("GENERATING PIE CHART...")
+print(pie_data) # TODO: create a pie chart based on the pie_data
+
+#labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
+#values = [4500, 2500, 1053, 500]
+
+labels = []
+values = []
+
+for d in pie_data:
+    labels.append(d["company"])
+    values.append(d["market_share"])
+
+fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
+fig.show()
 
 
 
 
 
 
-#exit()
+
+
+
+
+
+exit()
 
 #
 # CHART 2 (LINE)
