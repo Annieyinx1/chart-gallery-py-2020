@@ -1,25 +1,27 @@
 # three_charts.py
 
+import plotly.graph_objects as go
+
 #
 # CHART 1 (PIE)
 #
 
-pie_data = [
-    {"company": "Company X", "market_share": 0.55},
-    {"company": "Company Y", "market_share": 0.30},
-    {"company": "Company Z", "market_share": 0.15}
-]
-
-print("----------------")
-print("GENERATING PIE CHART...")
-print(pie_data) # TODO: create a pie chart based on the pie_data
-
-
+#pie_data = [
+#    {"company": "Company X", "market_share": 0.55},
+#    {"company": "Company Y", "market_share": 0.30},
+#    {"company": "Company Z", "market_share": 0.15}
+#]
+#
+#print("----------------")
+#print("GENERATING PIE CHART...")
+#print(pie_data) # TODO: create a pie chart based on the pie_data
 
 
 
 
-exit()
+
+
+#exit()
 
 #
 # CHART 2 (LINE)
@@ -39,6 +41,25 @@ line_data = [
 print("----------------")
 print("GENERATING LINE GRAPH...")
 print(line_data) # TODO: create a line graph based on the line_data
+
+#x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+#y = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+x = []
+y = []
+
+for d in line_data:
+    x.append(d["date"])
+    y.append(d["stock_price_usd"])
+
+fig = go.Figure(data=go.Scatter(x=x, y=y))
+fig.show()
+
+# TODO: add USD formatting, axis titles, chart title
+
+
+
+
 
 #
 # CHART 3 (HORIZONTAL BAR)
